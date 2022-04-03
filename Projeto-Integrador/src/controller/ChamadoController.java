@@ -8,25 +8,16 @@ import modelo.Chamado;
 public class ChamadoController {
 
   public void salvar(Chamado chamado) throws Exception {
-    if (chamado.getVeiculoPlaca() == null || chamado.getVeiculoPlaca().length() < 3) {
-      throw new Exception("Número da placa invalida");
-     }
      ChamadoDao.getInstance().salvar(chamado);
     
   }
   
   public void atualizar(Chamado chamado) throws Exception {
-    if (chamado.getVeiculoPlaca() == null || chamado.getVeiculoPlaca().length() < 3) {
-      throw new Exception("Número da placa invalida");
-     }
      ChamadoDao.getInstance().salvar(chamado);
     
   }
 
-   public void excluir(int idChamado) throws Exception {
-     if (idChamado == 0) {
-       throw new Exception("Nenhum número selecionado");
-     }
+   public void excluir(int idChamado) {
      ChamadoDao.getInstance().excluir(idChamado);
   }
 

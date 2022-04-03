@@ -1,16 +1,16 @@
+
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import dao.VeiculoDao;
-	
 import modelo.Veiculo;
 
-public class VeiculoDao<listaVeiculo> {
+public class VeiculoDao {
 
   
   private static VeiculoDao instance;
-  private List<Veiculo> listaVeiculo = new ArrayList<> ();
+  private List<Veiculo> listaVeiculo = new ArrayList<>();
 
   /*
    * Singleton
@@ -23,15 +23,10 @@ public class VeiculoDao<listaVeiculo> {
   }
 
   public void registrarVeiculo(Veiculo veiculo) {
-     Veiculo.add(veiculo); 
+     listaVeiculo.add(veiculo); 
   }
-
-public List<Veiculo> getListaVeiculo() {
-	return listaVeiculo;
-}
-
-public void setListaVeiculo(List<Veiculo> listaVeiculo) {
-	this.listaVeiculo = listaVeiculo;
-}
   
+  public List<Veiculo> listar() {
+	    return listaVeiculo;
+	  }
 }
