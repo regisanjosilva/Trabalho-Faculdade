@@ -2,14 +2,15 @@ package modelo;
 
 public class Chamado {
 	private int id;
-	private double DistanciaPercorrida;
+	private double distanciaPercorrida;
 	private double co2Emitido;
 	
 	private Veiculo veiculo;
 	
-	public Chamado(int id, double distanciaPercorrida) {
+	public Chamado(int id, double distanciaPercorrida, double co2Emitido) {
 		this.id = id;
-		DistanciaPercorrida = distanciaPercorrida;
+		this.distanciaPercorrida = distanciaPercorrida ;
+		this.co2Emitido = co2Emitido;
 	}
 
 	
@@ -32,18 +33,18 @@ public class Chamado {
 	}
 	
 	public double getDistanciaPercorrida() {
-		return DistanciaPercorrida;
+		return distanciaPercorrida;
 	}
 	
 	public void setDistanciaPercorrida(double distanciaPercorrida) {
-		DistanciaPercorrida = distanciaPercorrida;
+		this.distanciaPercorrida = distanciaPercorrida;
 	}
 	
 	public void CalcularCo2Emitido() {
-		co2Emitido = this.DistanciaPercorrida * veiculo.getKmPorLitro();
+		co2Emitido = this.distanciaPercorrida * veiculo.getKmPorLitro();
 	}
 	public String toString(){
-		return DistanciaPercorrida + " - " + id;
+		return distanciaPercorrida + " - " + id;
 	}
 }
 
