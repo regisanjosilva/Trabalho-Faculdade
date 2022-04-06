@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,14 +8,15 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-import javax.swing.Icon;
-
+import Util.ConnectionUtil;
 import modelo.Colaboradores;
 
 public class ColaboradoresDao {
 
   private static ColaboradoresDao instance;
   private List<Colaboradores> listaColaboradores = new ArrayList<>();
+  private Connection con = ConnectionUtil.getConnection();
+
 
   /*
    * Singleton
@@ -29,7 +31,7 @@ public class ColaboradoresDao {
   public void salvar(Colaboradores colaboradores) {
 	  try {
 	    	String sql = "insert into colaboradores(id, cpf, nome, dataNasc, habilitado) values(?, ?, ?, ?, ?)";
-	    	PreparedStatement pstmt = con.prepareStatement(sql);
+	    	PreparedStatement pstmt =  con.prepareStatement(sql);
 	    	pstmt.setInt(1, colaboradores.getId());
 	    	pstmt.setInt(2, colaboradores.getCpf());
 	    	pstmt.setString(3, colaboradores.getNome());
@@ -60,7 +62,7 @@ public class ColaboradoresDao {
 	    }
 	    	
 	 }   
-  }
+
 
    public void excluir(int idColaboradores) {
     listaColaboradores.remove(idColaboradores);

@@ -1,5 +1,6 @@
 package dao;
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -71,7 +72,7 @@ public class ChamadoDao {
 	    	Statement stmt = con.createStatement();
 	    	ResultSet rs = stmt.executeQuery(sql);
 	    	while (rs.next());
-	    	    Chamado c = new Chamado();
+	    	    Chamado c = new Chamado(0, 0, 0);
 	    	    c.setId(rs.getInt("id"));
 	    	    c.setDistanciaPercorrida(rs.getDouble("DistanciaPercorrida"));
 	    	    c.setCo2Emitido(rs.getDouble("co2Emitido"));
