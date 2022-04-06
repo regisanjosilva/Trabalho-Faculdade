@@ -28,7 +28,7 @@ public class ChamadoDao {
 
   public void salvar(Chamado chamado) {
     try {
-    	String sql = "insrt into chamado ( id, distanciaPercorrida, co2Emitido ) values (?, ? , ?)";
+    	String sql = "insert into chamado ( id, distanciaPercorrida, co2Emitido ) values (?, ? , ?)";
     	PreparedStatement pstmt = con.prepareStatement(sql);
     	pstmt.setInt(1, chamado.getId());
     	pstmt.setDouble(2, chamado.getDistanciaPercorrida());
