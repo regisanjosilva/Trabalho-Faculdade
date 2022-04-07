@@ -1,6 +1,7 @@
 package main;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,9 +49,9 @@ public class Principal {
 				System.out.println(c.toString());
 			}
 			
-		Chamado chamado1 = new Chamado(1, 54);
+		Chamado chamado1 = new Chamado();
 		
-		Chamado chamado2 = new Chamado(2, 102);
+		Chamado chamado2 = new Chamado();
 		
 		ChamadoController chamadocontroller = new ChamadoController();
 		
@@ -76,11 +77,11 @@ public class Principal {
 	public static void insere() {
 		try {
 			Connection conexao = ConnectionUtil.getConnection();
-			String sql = "insert into circulo (cor, area, raio) values (?, ?, ?)";
+			String sql = "";
 			PreparedStatement pstmt = conexao.prepareStatement(sql);
-			pstmt.setString(1, "verde");
-			pstmt.setDouble(2, 8);
-			pstmt.setDouble(3, 4);
+			pstmt
+			pstmt
+			pstmt
 			pstmt.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -92,12 +93,12 @@ public class Principal {
 		try {
 			Connection conexao = ConnectionUtil.getConnection();
 			Statement stmt = conexao.createStatement();
-			String sql = "select * from circulo";
+			String sql = "select * from";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println("Cor: " + rs.getString("cor"));
-				System.out.println("Area: " + rs.getDouble("Area"));
-				System.out.println("Raio: " + rs.getDouble("raio"));
+				System.out.println("" + rs.getString(""));
+				System.out.println(" " + rs.getDouble(""));
+				System.out.println(" " + rs.getDouble(""));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
