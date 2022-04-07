@@ -2,13 +2,16 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
 import java.util.List;
 
 import Util.ConnectionUtil;
+import modelo.Chamado;
 import modelo.Colaboradores;
 
 public class ColaboradoresDao {
@@ -65,13 +68,44 @@ public class ColaboradoresDao {
 
 
    public void excluir(int idColaboradores) {
-    listaColaboradores.remove(idColaboradores);
-  }
+	   try {
+	    	String sql = "Delete from colaboradores where id =? ";
+	    	PreparedStatement pstmt = con.prepareStatement(sql);
+	    	pstmt.setInt(1, idColaboradores);
+	    	pstmt.executeUpdate();
+	    	    	
+	    	pstmt.execute();
+	    } catch (SQLException e) {
+	    	e.printStackTrace();
+	    }
+	    	
+	 }   
+  
 
   public List<Colaboradores> listar() {
-    return listaColaboradores;
+	  try {
+	    	String sql = "select * from colaboradores ";
+	    	Statement stmt = con.createStatement();
+	    	ResultSet rs = stmt.executeQuery(sql);
+	    	while (rs.next());
+	    	    Colaboradores c = new Colaboradores();
+	    	    c.setId(rs.getInt("id"));
+	    	    c.setCpf(rs.getInt("cpf"));
+	    	    c.setNome(rs.getString("nome"));
+	    	    c.setDataNasc(rs.getInt("dataNasc"));
+	    	    c.setHabilitado(true);
+	    	    listaColaboradores.add(c);
+	    	        	    
+	    	    
+	    	
+	    } catch (SQLException e) {
+	    	e.printStackTrace();
+	    }
+	  return listaColaboradores;
+}
+
   }
   
-}
+
 
 

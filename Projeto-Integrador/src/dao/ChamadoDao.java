@@ -73,7 +73,7 @@ public class ChamadoDao {
 	    	Statement stmt = con.createStatement();
 	    	ResultSet rs = stmt.executeQuery(sql);
 	    	while (rs.next());
-	    	    Chamado c = new Chamado(0, 0, 0);
+	    	    Chamado c = new Chamado();
 	    	    c.setId(rs.getInt("id"));
 	    	    c.setDistanciaPercorrida(rs.getDouble("DistanciaPercorrida"));
 	    	    c.setCo2Emitido(rs.getDouble("co2Emitido"));

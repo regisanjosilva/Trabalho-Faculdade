@@ -8,12 +8,12 @@ public class Veiculo {
 	private double KmPorLitro;
 	
 	
-	public Veiculo(String placa, String modelo, String cor, int ano, double kmPorLitro) {
+	public Veiculo(String placa, String modelo, String cor, int ano, double KmPorLitro) {
 		this.placa = placa;
 		this.modelo = modelo;
 		this.cor = cor;
 		this.ano = ano;
-		this.KmPorLitro = kmPorLitro;
+		this.KmPorLitro = KmPorLitro;
 	}
 	
 	
@@ -26,8 +26,8 @@ public class Veiculo {
 	public String getModelo() {
 		return modelo;
 	}
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setModelo(String i) {
+		this.modelo = i;
 	}
 	public String getCor() {
 		return cor;
