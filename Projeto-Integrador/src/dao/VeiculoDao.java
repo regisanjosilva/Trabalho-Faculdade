@@ -81,7 +81,7 @@ public class VeiculoDao {
 	 }   
   
 
-  public List<Colaboradores> listar() {
+  public List<Veiculo> listar() {
 	  try {
 	    	String sql = "select * from colaboradores ";
 	    	Statement stmt = con.createStatement();
@@ -101,7 +101,7 @@ public class VeiculoDao {
 	    } catch (SQLException e) {
 	    	e.printStackTrace();
 	    }
-	  return listaColaboradores;
+	  return listaVeiculo;
 }
 
   }
