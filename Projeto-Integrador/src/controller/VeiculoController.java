@@ -2,10 +2,12 @@ package controller;
 
 import java.util.List;
 
+
 import dao.VeiculoDao;
 import modelo.Veiculo;
 
 public class VeiculoController {
+	
 
   public void registrarVeiculo(Veiculo veiculo) throws Exception {
     if (veiculo.getModelo() == null) {

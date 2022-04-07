@@ -2,6 +2,7 @@
 package dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -83,7 +84,7 @@ public class VeiculoDao {
 
   public List<Veiculo> listar() {
 	  try {
-	    	String sql = "select * from colaboradores ";
+	    	String sql = "select * from veiculo ";
 	    	Statement stmt = con.createStatement();
 	    	ResultSet rs = stmt.executeQuery(sql);
 	    	while (rs.next());
@@ -104,5 +105,5 @@ public class VeiculoDao {
 	  return listaVeiculo;
 }
 
-  }
+ }
   
