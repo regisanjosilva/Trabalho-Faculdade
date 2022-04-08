@@ -96,9 +96,9 @@ public class Principal {
 			String sql = "select * from";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println("" + rs.getString(""));
-				System.out.println(" " + rs.getDouble(""));
-				System.out.println(" " + rs.getDouble(""));
+				System.out.println("" + rs.get(""));
+				System.out.println(" " + rs.get(""));
+				System.out.println(" " + rs.get(""));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
