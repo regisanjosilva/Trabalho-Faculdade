@@ -2,14 +2,14 @@ package modelo;
 
 public class Colaboradores {
 	private int id;
-	private int cpf;
+	private String cpf;
 	private String nome;
-	private int dataNasc;
-	private boolean habilitado;
+	private String dataNasc;
+	private String habilitado;
 	
 	
 	
-	public Colaboradores(int id, int cpf, String nome, int dataNasc, boolean habilitado) {
+	public Colaboradores(int id, String cpf, String nome, String dataNasc, String habilitado) {
 		this.id = id;
 		this.cpf = cpf;
 		this.nome = nome;
@@ -25,11 +25,11 @@ public class Colaboradores {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
-		this.cpf = cpf;
+	public void setCpf(String string) {
+		this.cpf = string;
 	}
 	public String getNome() {
 		return nome;
@@ -37,17 +37,17 @@ public class Colaboradores {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getDataNasc() {
+	public String getDataNasc() {
 		return dataNasc;
 	}
-	public void setDataNasc(int dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setDataNasc(String string) {
+		this.dataNasc = string;
 	}
-	public boolean isHabilitado() {
+	public String isHabilitado() {
 		return habilitado;
 	}
-	public void setHabilitado(boolean habilitado) {
-		this.habilitado = habilitado;
+	public void setHabilitado(String string) {
+		this.habilitado = string;
 	}
 	public String toString(){
 		return nome + " - " + id + " - " + cpf + " - " + dataNasc + " - " + habilitado;
