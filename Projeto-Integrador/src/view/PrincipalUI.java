@@ -2,6 +2,8 @@ package view;
 
 import java.awt.BorderLayout;
 
+
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -56,7 +58,7 @@ public class PrincipalUI extends JFrame {
 		jmiColaboradores . addActionListener ( new  ActionListener () {
 			public  void  actionPerformed ( ActionEvent  e ) {
 				CadastroColaboradorUI  cadColaboradorUI = new  CadastroColaboradorUI ();
-				cadColaboradorUI . setVisível ( true );
+				cadColaboradorUI . setVisible ( true );
 				contentPane . add ( cadColaboradorUI , 0 );
 			}
 		});
@@ -66,7 +68,7 @@ public class PrincipalUI extends JFrame {
 		jmiVeiculos . addActionListener ( new  ActionListener () {
 			public  void  actionPerformed ( ActionEvent  e ) {
 				CadastroVeiculoUI  cadVeiculoUI = new  CadastroVeiculoUI ();
-				cadVeiculoUI . setVisível ( true );
+				cadVeiculoUI . setVisible ( true );
 				contentPane . add ( cadVeiculoUI , 0 );
 			}
 		});
@@ -79,7 +81,7 @@ public class PrincipalUI extends JFrame {
 		jmiConsultaColaboradores . addActionListener ( new  ActionListener () {
 			public  void  actionPerformed ( ActionEvent  e ) {
 				ConsultaColaboradorUI  consultaColabUI = new  ConsultaColaboradorUI ();
-				consultaColabUI . setVisível ( true );
+				consultaColabUI . setVisible ( true );
 				contentPane . add ( consultaColabUI , 0 );
 			}
 		});
@@ -89,11 +91,17 @@ public class PrincipalUI extends JFrame {
 		jmiConsultaVeiculos . addActionListener ( new  ActionListener () {
 			public  void  actionPerformed ( ActionEvent  e ) {
 				ConsultaVeiculoUI  consultaVeiculoUI = new  ConsultaVeiculoUI ();
-				consultaVeiculoUI . setVisível ( true );
+				consultaVeiculoUI . setVisible ( true );
 				contentPane . add ( consultaVeiculoUI , 0 );
 			}
 		});
-		jmConsultas . add ( jmiConsultaVeículos );
+		jmConsultas . add ( jmiConsultaVeiculos );
+		
+		JMenuItem jmiChamados = new JMenuItem("Chamados");
+		jmConsultas.add(jmiChamados);
+		
+		
+		
 		
 		JMenu  jmChamados = new  JMenu ( "Chamados" );
 		jmMenuPrincipal . add ( jmChamados );
@@ -102,21 +110,11 @@ public class PrincipalUI extends JFrame {
 		jmiRegistrarChamado . addActionListener ( new  ActionListener () {
 			public  void  actionPerformed ( ActionEvent  e ) {
 				RegistrarChamadoUI  regChamadoUI = new  RegistrarChamadoUI ();
-				regChamadoUI . setVisível ( true );
+				regChamadoUI . setVisible ( true );
 				contentPane . add ( regChamadoUI , 0 );
 			}
 		});
 		jmChamados . add ( jmiRegistrarChamado );
-		
-		JMenuItem  jmiConsultarChamado = new  JMenuItem ( "Consultar Chamado" );
-		jmiConsultarChamado . addActionListener ( new  ActionListener () {
-			public  void  actionPerformed ( ActionEvent  e ) {
-				ConsultaChamadosUI  consultaChamadoUI = new  ConsultaChamadosUI ();
-				consultaChamadoUI . setVisível ( true );
-				contentPane . add ( consultaChamadoUI , 0 );
-			}
-		});
-		jmChamados . add ( jmiConsultarChamado );
 		contentPane = new  JPanel ();
 		contentPane . setBorder ( new  EmptyBorder ( 5 , 5 , 5 , 5 ));
 		setContentPane ( contentPane );
