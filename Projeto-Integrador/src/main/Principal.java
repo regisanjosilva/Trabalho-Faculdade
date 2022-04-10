@@ -2,6 +2,7 @@ package main;
 
 import java.sql.Connection;
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,9 +50,9 @@ public class Principal {
 				System.out.println(c.toString());
 			}
 			
-		Chamado chamado1 = new Chamado();
+		Chamado chamado1 = new Chamado(0, 0, 0);
 		
-		Chamado chamado2 = new Chamado();
+		Chamado chamado2 = new Chamado(0, 0, 0);
 		
 		ChamadoController chamadocontroller = new ChamadoController();
 		
@@ -79,7 +80,7 @@ public class Principal {
 			Connection conexao = ConnectionUtil.getConnection();
 			String sql = "";
 			PreparedStatement pstmt = conexao.prepareStatement(sql);
-			pstmt
+			pstmt.
 			pstmt
 			pstmt
 			pstmt.execute();
@@ -96,9 +97,9 @@ public class Principal {
 			String sql = "select * from";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println("" + rs.get(""));
-				System.out.println(" " + rs.get(""));
-				System.out.println(" " + rs.get(""));
+				System.out.println(" " + rs.getInt(""));
+				System.out.println(" " + rs.getInt(""));
+				System.out.println(" " + rs.getInt(""));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,9 +37,9 @@ public class ColaboradoresDao {
 	    	String sql = "insert into colaboradores(id, cpf, nome, dataNasc, habilitado) values(?, ?, ?, ?, ?)";
 	    	PreparedStatement pstmt =  con.prepareStatement(sql);
 	    	pstmt.setInt(1, colaboradores.getId());
-	    	pstmt.setInt(2, colaboradores.getCpf());
+	    	pstmt.setDouble(2, colaboradores.getCpf());
 	    	pstmt.setString(3, colaboradores.getNome());
-	    	pstmt.setInt(4, colaboradores.getDataNasc());
+	    	pstmt.setDouble(4, colaboradores.getDataNasc());
 	    	pstmt.setBoolean(5, colaboradores.isHabilitado());
 	    	    	
 	    	pstmt.execute();
@@ -54,9 +55,9 @@ public class ColaboradoresDao {
 	    	String sql = "update coaboradores set id = ?, cpf = ?, nome = ?, dataNasc = ?, habilitado = ?";
 	    	PreparedStatement pstmt = con.prepareStatement(sql);
 	    	pstmt.setInt(1, colaboradores.getId());
-	    	pstmt.setInt(2, colaboradores.getCpf());
+	    	pstmt.setDouble(2, colaboradores.getCpf());
 	    	pstmt.setString(3, colaboradores.getNome());
-	    	pstmt.setInt(4, colaboradores.getDataNasc());
+	    	pstmt.setDouble(4, colaboradores.getDataNasc());
 	    	pstmt.setBoolean(5, colaboradores.isHabilitado());
 	    	    	
 	    	pstmt.execute();
@@ -88,11 +89,11 @@ public class ColaboradoresDao {
 	    	Statement stmt = con.createStatement();
 	    	ResultSet rs = stmt.executeQuery(sql);
 	    	while (rs.next());
-	    	    Colaboradores c = new Colaboradores();
+	    	    Colaboradores c = Colaboradores();
 	    	    c.setId(rs.getInt("id"));
-	    	    c.setCpf(rs.getInt("cpf"));
+	    	    c.setCpf(rs.getDouble("cpf"));
 	    	    c.setNome(rs.getString("nome"));
-	    	    c.setDataNasc(rs.getInt("dataNasc"));
+	    	    c.setDataNasc(rs.getDouble("dataNasc"));
 	    	    c.setHabilitado(true);
 	    	    listaColaboradores.add(c);
 	    	        	    
@@ -104,7 +105,10 @@ public class ColaboradoresDao {
 	  return listaColaboradores;
 }
 
-  }
+
+}
+
+  
   
 
 

@@ -14,7 +14,7 @@ public class colaboradorTables extends AbstractTableModel{
 	private List<colaborador> valores;       
 
 	//Esse é um construtor, que recebe a nossa lista de clientes
-	public ProdutoTableModel(List<Produto> valores) {
+	public colaboradorTables(List<Produto> valores) {
 		this.valores = new ArrayList<Produto>(valores);
 	}
 
@@ -30,7 +30,7 @@ public class colaboradorTables extends AbstractTableModel{
 
 	public String getColumnName(int column) {
 		//Qual é o nome das nossas colunas?
-		if (column == COL_DESCRICAO) return "Descrição";
+		if (column == COL_CPF) return "Descrição";
 		if (column == COL_PRECO_UNITARIO) return "Preço Unitário";
 		return ""; //Nunca deve ocorrer
 	}
@@ -38,7 +38,7 @@ public class colaboradorTables extends AbstractTableModel{
 	public Object getValueAt(int row, int column) {
 		//Precisamos retornar o valor da coluna column e da linha row.
 		Produto produto = valores.get(row);
-		if (column == COL_DESCRICAO)
+		if (column == COL_CPF)
 			return produto.getDescricao();
 		else 
 			if (column == COL_PRECO_UNITARIO) 
@@ -50,7 +50,7 @@ public class colaboradorTables extends AbstractTableModel{
 		Produto produto = valores.get(rowIndex);
 		//Vamos alterar o valor da coluna columnIndex na linha rowIndex com o valor aValue passado no parï¿½metro.
 		//Note que vc poderia alterar 2 campos ao invï¿½s de um sï¿½.
-		if (columnIndex == COL_DESCRICAO)
+		if (columnIndex == COL_CPF)
 			produto.setDescricao(aValue.toString());
 		else 
 			if (columnIndex == COL_PRECO_UNITARIO) 

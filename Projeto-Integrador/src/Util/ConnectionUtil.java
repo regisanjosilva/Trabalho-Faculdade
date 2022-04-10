@@ -3,6 +3,7 @@ package Util;
 
 import java.sql.Connection;
 
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -13,7 +14,7 @@ public class ConnectionUtil {
     public static Connection getConnection(){
         try { 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/poo";
+            String url = "jdbc:mysql://localhost:3312/poo";
             con = DriverManager.getConnection(url,"root","");
             con.setAutoCommit(true);
             return con;
